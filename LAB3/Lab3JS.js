@@ -41,13 +41,33 @@
 // alert("wynik dodawania to" + " " + wynik)
 
 // zadanie 8
-function findMax() {
-    let nr1 = parseFloat(document.getElementById('liczba1').value);
-    let nr2 = parseFloat(document.getElementById('liczba2').value);
-    let nr3 = parseFloat(document.getElementById('liczba3').value);
+// function findMax() {
+//     let nr1 = parseFloat(document.getElementById('liczba1').value);
+//     let nr2 = parseFloat(document.getElementById('liczba2').value);
+//     let nr3 = parseFloat(document.getElementById('liczba3').value);
 
-    var max = Math.max(nr1, nr2, nr3);
+//     var max = Math.max(nr1, nr2, nr3);
 
-    console.log(max);
-    document.getElementById('wynik').innerText = 'Największa liczba: ' + max;
+//     console.log(max);
+//     document.getElementById('wynik').innerText = 'Największa liczba: ' + max;
+// }
+
+// zadanie 9
+
+
+// function findGCD() {
+    let x = parseInt(prompt("Podaj pierwszą liczbę"));
+    let y = parseInt(prompt("Podaj drugą liczbe"));
+
+    let nwd = liczNWD(x, y);
+
+    console.log(nwd);
+// }
+function liczNWD(a, b) {
+    while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return alert(Math.abs(a));
 }
