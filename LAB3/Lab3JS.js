@@ -34,8 +34,20 @@
 // alert("Witaj"+ imie)
 
 //Zadanie 7
-let w = parseInt(prompt("Podaj pierwszą liczbę"));
-let e = parseInt(prompt("Podaj drugą liczbe"));
+// let w = parseInt(prompt("Podaj pierwszą liczbę"));
+// let e = parseInt(prompt("Podaj drugą liczbe"));
 
-let wynik = w+e;
-alert("wynik dodawania to" + " " + wynik)
+// let wynik = w+e;
+// alert("wynik dodawania to" + " " + wynik)
+
+// zadanie 8
+function findMax() {
+    let nr1 = parseFloat(document.getElementById('liczba1').value);
+    let nr2 = parseFloat(document.getElementById('liczba2').value);
+    let nr3 = parseFloat(document.getElementById('liczba3').value);
+
+    var max = Math.max(nr1, nr2, nr3);
+
+    console.log(max);
+    document.getElementById('wynik').innerText = 'Największa liczba: ' + max;
+}
