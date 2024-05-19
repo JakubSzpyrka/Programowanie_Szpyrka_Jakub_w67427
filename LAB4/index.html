@@ -1,17 +1,70 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .button,.button1 {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+}
+ 
+.active {
+    background-color: #4caf50;
+}
+    </style>
 </head>
 <body>
-    <div id="zad5">
-        <button id="one">Zielony</button>
-        <button id="two">Czerwony</button>
-        <button id="three">Niebieski</button>
-    </div>
-    
+    <section>
+        <button class="button" onclick="changeColor(this)">Przycisk 1</button>
+        <button class="button" onclick="changeColor(this)">Przycisk 2</button>
+        <button class="button" onclick="changeColor(this)">Przycisk 3</button>
+    </section>
+    <section>
+        <button class="button1" onclick="toggleVisibility()">Zmiana widoczności</button>
+        <div id="hiddenElement" style="display: none;">
+            To jest element, którego widoczność będzie zmieniana.
+        </div>
+    </section>
+    <section>
+        <input type="text" id="itemInput" placeholder="Wpisz element listy">
+        <button onclick="addItem()">Dodaj do listy</button>
+        <ul id="itemList"></ul>
+    </section>
+    <section>
+        <input type="text" id="firstName" placeholder="Imię">
+        <input type="text" id="lastName" placeholder="Nazwisko">
+        <button onclick="addToTable()">Dodaj do tabeli</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </section>
+    <section>
+        <input type="number" id="temperatureInput" placeholder="Wpisz temperaturę w C">
+        <button onclick="convertToCelsius()">Do C</button>
+        <button onclick="convertToFahrenheit()">Do F</button>
+        <div id="result"></div>
+    </section>
+    <section>
+        <input type="number" id="num1" placeholder="Pierwsza liczba">
+        <input type="number" id="num2" placeholder="Druga liczba">
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('-')">-</button>
+        <button onclick="calculate('*')">*</button>
+        <button onclick="calculate('/')">/</button>
+        <button onclick="calculate('**')">^</button>
+        <div id="calcResult"></div>
+    </section>
+    <script src="script.js"></script>
 </body>
 </html>

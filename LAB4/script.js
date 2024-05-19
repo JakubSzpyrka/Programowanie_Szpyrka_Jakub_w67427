@@ -1,47 +1,126 @@
 // Zadanie 1
-// a)
-// console.log("odliczanie sylwestrowe rozpoczyna się...");
-
-// for (let i = 10; i >= 0; i--) {
-//     console.log(i);
-// }
-
-// console.log("szczęśliwego nowego roku!");
-
-// b)
-
-// console.log("odliczanie sylwestrowe rozpoczyna się...");
-// let countdown = 10;
-
-// while (countdown >= 0) {
-//     console.log(countdown);
-//     countdown--;
-// }
-
-// console.log("szczęśliwego nowego roku");
-
-// Zadanie2
-
-// function silnia(x){
-//     if (x==1 || x==0){
+ 
+for(let i=1; i<=10; i++) {
+    console.log(i);
+}
+ 
+console.log("Happy New Year!");
+ 
+let i = 0;
+ 
+while (i <= 9) {
+    i++;
+    console.log(i);
+}
+console.log("Happy New Year!");
+ 
+// Zadanie 2
+ 
+// function silnia(n) {
+//     if (n > 1)
+//         return n * silnia(n-1);
+//     else
 //         return 1;
-//     }else{
-//         return x * silnia(x-1);
-//     }
+ 
 // }
-// console.log(silnia(5))
-//zadanie3
-
-// function sprawdz(x){
-//     let wiek = parseInt(prompt("Podaj wiek"));
-//     if (wiek==0) {
-//         return 0;
-//     }if (wiek>18){
-//         console.log("Jestes pelnoletni")
-//     }else{
-//         window.open("https://www.w3schools.com")
-//     }
+ 
+// let n = prompt("Podaj liczbę, dla której chcesz obliczyć slinię: ");
+// console.log(silnia(Number(n)));
+ 
+// Zadanie 3
+ 
+// function openWin() {
+//     let wiek = prompt("Podaj ile masz lat: ")
+//     if (wiek >= 18)
+//         window.open("", "_self")
+//     else
+//         window.open("https://www.gry.pl/")
 // }
-// sprawdz()
+ 
+// openWin();
+ 
 // Zadanie 4
-
+ 
+function changeColor(clickedButton) {
+    const buttons = document.querySelectorAll('.button');
+ 
+    buttons.forEach(button => {
+      if (button !== clickedButton) {
+        button.classList.remove('active');
+      }
+    });
+ 
+    clickedButton.classList.toggle('active');
+ 
+}
+ 
+// Zadanie 5
+ 
+function toggleVisibility() {
+  var element = document.getElementById('hiddenElement');
+  if (element.style.display === 'none') {
+      element.style.display = 'block';
+  } else {
+      element.style.display = 'none';
+  }
+}
+ 
+// Zadanie 6
+ 
+function addItem() {
+  var input = document.getElementById('itemInput');
+  var newItem = input.value;
+  if (newItem) {
+      var listItem = document.createElement('li');
+      listItem.textContent = newItem;
+      document.getElementById('itemList').appendChild(listItem);
+      input.value = '';
+  }
+}
+ 
+// Zadanie 7
+ 
+function addToTable() {
+  var firstName = document.getElementById('firstName').value;
+  var lastName = document.getElementById('lastName').value;
+  if (firstName && lastName) {
+      var table = document.getElementById('tableBody');
+      var row = table.insertRow();
+      var firstNameCell = row.insertCell(0);
+      var lastNameCell = row.insertCell(1);
+      firstNameCell.textContent = firstName;
+      lastNameCell.textContent = lastName;
+      document.getElementById('firstName').value = '';
+      document.getElementById('lastName').value = '';
+  }
+}
+ 
+// Zadanie 8
+ 
+function convertToFahrenheit() {
+  var celsius = document.getElementById('temperatureInput').value;
+  var fahrenheit = celsius * 9/5 + 32;
+  document.getElementById('result').textContent = `${fahrenheit} °F`;
+}
+ 
+function convertToCelsius() {
+  var fahrenheit = document.getElementById('temperatureInput').value;
+  var celsius = (fahrenheit - 32) * 5/9;
+  document.getElementById('result').textContent = `${celsius} °C`;
+}
+ 
+// Zadanie 10
+ 
+function calculate(operation) {
+  var num1 = parseFloat(document.getElementById('num1').value);
+  var num2 = parseFloat(document.getElementById('num2').value);
+  var result;
+  switch(operation) {
+      case '+': result = num1 + num2; break;
+      case '-': result = num1 - num2; break;
+      case '*': result = num1 * num2; break;
+      case '/': result = num1 / num2; break;
+      case '**': result = Math.pow(num1, num2); break;
+  }
+  document.getElementById('calcResult').textContent = "Wynik: " + result;
+}
