@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularze</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>Formularz Rejestracyjny</h1>
+    <form id="registrationForm">
+        <div class="form-group">
+            <label for="firstName">Imię</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Nazwisko</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Hasło</label>
+            <input type="password" id="password" name="password" minlength="8" required>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Powtórz Hasło</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" required>
+            <div class="error" id="confirmPasswordError"></div>
+        </div>
+        <div class="form-group">
+            <label>Płeć</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="male" required>Mężczyzna</label>
+                <label><input type="radio" name="gender" value="female">Kobieta</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone">telefon</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" required>
+        </div>
+        <div class="form-group">
+            <label for="birthDate">Data Urodzenia</label>
+            <input type="date" id="birthDate" name="birthDate" required>
+            <div class="error" id="birthDateError"></div>
+        </div>
+        <div class="form-group">
+            <label for="country">Kraj</label>
+            <select id="country" name="country" required>
+                <option value="">Wybierz Kraj</option>
+                <option value="PL">Polska</option>
+                <option value="US">USA</option>
+                <option value="DE">Niemcy</option>
+            </select>
+            <div class="error" id="countryError"></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="region">Województwo</label>
+        <select id="region" name="region" class="hidden" required>
+            <option value="">Wybierz województwo</option>
+            <option value="dolnoslaskie">Dolnośląskie</option>
+            <option value="kujawsko-pomorskie">Kujawsko-pomorskie</option>
+            
+        </select>
+        <input type="text" id="regionText" name="regionText" class="hidden" required>
+        <div class="error" id="regionError"></div>
+    </div>
+    <div class="form-group">
+        <label for="address">Adres zamieszkania</label>
+        <input type="text" id="address" name="address" required>
+        <div class="error" id="addressError"></div>
+    </div>
+    <div class="form-group">
+        <label><input type="checkbox" id="sameAddress" name="sameAddress" checked> Adres korespondencyjny jest taki sam jak adres zamieszkania</label>
+    </div>
+    <div class="form-group hidden" id="correspondenceAddressGroup">
+        <label for="correspondenceAddress">Adres korespondencyjny</label>
+        <input type="text" id="correspondenceAddress" name="correspondenceAddress">
+        <div class="error" id="correspondenceAddressError"></div>
+    </div>
+        <button type="submit">Zapisz</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
